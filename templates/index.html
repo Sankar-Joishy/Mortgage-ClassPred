@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Team-B Technocolabs Data Science Internship</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  
+</head>
+
+<body>
+
+
+<style>
+body {
+  background-image: url("https://ca-times.brightspotcdn.com/dims4/default/9970676/2147483647/strip/true/crop/2048x1365+0+0/resize/1200x800!/format/webp/quality/75/?url=https%3A%2F%2Fcalifornia-times-brightspot.s3.amazonaws.com%2Fd5%2Fc7%2Fb51d53991699dd460f3b8e34b16a%2Fla-akhouri-1485893302-snap-photo");
+  background-position: 200%;
+  background-size: cover;
+}
+</style>
+
+
+
+ <div class="login">
+	<h1>Predict Loan Mortgage</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict') }}" method="post">
+    	<input type="text" name="CreditScore" placeholder="CreditScore" required="required" />
+        <input type="text" name="MIP" placeholder="MIP" required="required" />
+		<input type="text" name="Units" placeholder="Units" required="required" />
+        <input type="text" name="OCLTV" placeholder="OCLTV" required="required" />
+        <input type="text" name="DTI" placeholder="DTI" required="required" />
+        <input type="text" name="OrigUPB" placeholder="OrigUPB" required="required" />
+        <input type="text" name="LTV" placeholder="LTV" required="required" />
+        <input type="text" name="OrigInterestRate" placeholder="OrigInterestRate" required="required" />
+        <input type="text" name="OrigLoanTerm" placeholder="OrigLoanTerm" required="required" />
+        <input type="text" name="EverDelinquent" placeholder="EverDelinquent" required="required" />
+        <input type="text" name="MonthsDelinquent" placeholder="MonthsDelinquent" required="required" />
+        <input type="text" name="MonthsInRepayment" placeholder="MonthsInRepayment" required="required" />
+        <input type="text" name="LTVRange" placeholder="LTVRange" required="required" />
+        <input type="text" name="RepaymentRange" placeholder="RepaymentRange" required="required" />
+        <input type="text" name="EMI" placeholder="EMI" required="required" />
+        <input type="text" name="Total_Payment" placeholder="Total_Payment" required="required" />
+        <input type="text" name="Interest_Amount" placeholder="Interest_Amount" required="required" />
+        <input type="text" name="Curr_Principal" placeholder="Curr_Principal" required="required" />
+        <input type="text" name="Monthly_Income" placeholder="Monthly_Income" required="required" />
+        <input type="text" name="Prepayment" placeholder="Prepayment" required="required" />
+        <input type="text" name="CreditRange" placeholder="CreditRange" required="required" />
+        <input type="text" name="RepayRange" placeholder="RepayRange" required="required" />
+
+
+
+
+
+
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   <br>
+   {{ prediction_text }}
+
+ </div>
+
+
+</body>
+</html>
